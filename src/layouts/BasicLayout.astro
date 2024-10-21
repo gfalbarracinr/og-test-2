@@ -45,11 +45,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta name="description" content={resolveDescription} />
 
     <!-- Open Graph / Facebook -->
+    <meta property="og:image" content={new URL("/og-image.png", Astro.url)} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={resolveDescription} />
-    <meta property="og:image" content={new URL("/og-image.png", Astro.url)} />
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={Astro.url} />
