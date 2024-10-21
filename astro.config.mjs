@@ -1,8 +1,6 @@
 import { defineConfig } from 'astro/config';
 import { astroImageTools } from "astro-imagetools";
 import react from '@astrojs/react';
-import { shield } from '@kindspells/astro-shield';
-import compressor from "astro-compressor";
 import sitemap from "@astrojs/sitemap";  
 import icon from 'astro-icon';
 
@@ -20,9 +18,7 @@ export default defineConfig({
       }
     ), 
     react(), 
-    shield({}), 
     sitemap(), 
-    compressor()
   ],
   outDir: 'public',
   publicDir: 'static',
