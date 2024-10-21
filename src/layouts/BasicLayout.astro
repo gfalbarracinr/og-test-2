@@ -1,5 +1,7 @@
 ---
 import '@fontsource/roboto';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 export interface Props {
   title: string;
   description?: string;
@@ -11,23 +13,6 @@ const resolveDescription = description ?? "We are an international engineering b
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 ---
-
-<style is:global>
-  html,
-  body {
-    height: 100%;
-  }
-  html {
-    overflow-y: scroll;
-  }
-  body {
-    margin: 0;
-    font-family: "Roboto", "Open Sans", "Segoe UI", "lucida grande", arial,
-      verdana, "lucida sans unicode", tahoma, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-  }
-</style>
 
 <html lang="en">
   <head>
@@ -56,9 +41,27 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={resolveDescription} />
     <meta property="twitter:image" content={new URL("/og-image.png", Astro.url)} />
+    <style>
+        html,
+        body {
+          height: 100%;
+        }
+        html {
+          overflow-y: scroll;
+        }
+        body {
+          margin: 0;
+          font-family: "Roboto", "Open Sans", "Segoe UI", "lucida grande", arial,
+            verdana, "lucida sans unicode", tahoma, sans-serif;
+          font-weight: 400;
+          font-size: 16px;
+        }
+      </style>
   </head>
 
   <body>
-    <slot />
+    <Header />
+        <slot />
+    <Footer />
   </body>
 </html>
