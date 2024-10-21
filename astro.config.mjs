@@ -8,7 +8,7 @@ import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://ekumenlabs.com',
+  site: 'https://test2og.netlify.app/',
   integrations: [
     astroImageTools,
     icon(
